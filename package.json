@@ -1,0 +1,29 @@
+{
+  "name": "remark-linkify-regex",
+  "version": "1.0.0",
+  "description": "Converts regex matches insides text nodes to link nodes",
+  "repository": "https://gitlab.com/staltz/remark-linkify-regex",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "author": "staltz.com",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "mdast",
+    "markdown",
+    "unist"
+  ],
+  "dependencies": {
+    "unist-util-visit-parents": "2.0.x",
+    "unist-util-flatmap": "1.0.x"
+  },
+  "devDependencies": {
+    "tape": "^4.8.0",
+    "unified": "7.0.0",
+    "unist-util-inspect": "4.1.3",
+    "remark-parse": "5.0.0"
+  }
+}
