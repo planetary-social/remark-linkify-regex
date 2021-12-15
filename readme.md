@@ -5,7 +5,7 @@ Given markdown text nodes, find textual matches of a RegExp, and replace those m
 ## Installation
 
 ```sh
-npm install remark-linkify-regex
+npm install -S @planetary-ssb/remark-linkify-regex
 ```
 
 ## Usage
