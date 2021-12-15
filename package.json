@@ -1,5 +1,5 @@
 {
-  "name": "@planetary-ssb/remark-linkinfy-regex",
+  "name": "@planetary-ssb/remark-linkify-regex",
   "version": "0.0.0",
   "description": "Converts regex matches insides text nodes to link nodes",
   "repository": {
