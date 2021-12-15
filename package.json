@@ -8,7 +8,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "tape test.js"
+    "test": "tape test.js | tap-spec"
   },
   "author": "staltz.com",
   "license": "MIT",
@@ -20,14 +20,16 @@
     "unist"
   ],
   "dependencies": {
-    "unist-util-visit-parents": "2.0.x",
-    "unist-util-flatmap": "1.0.x"
+    "unist-util-flatmap": "1.0.x",
+    "unist-util-visit-parents": "2.0.x"
   },
   "devDependencies": {
-    "tape": "^4.8.0",
+    "remark": "~9.0.0",
+    "remark-parse": "^5.0.0",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.14.0",
     "unified": "7.0.0",
-    "unist-util-inspect": "4.1.3",
-    "remark-parse": "5.0.0"
+    "unist-util-inspect": "4.1.3"
   },
   "bugs": {
     "url": "https://gitlab.com/staltz/remark-linkify-regex/issues"

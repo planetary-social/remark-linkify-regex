@@ -34,7 +34,7 @@ function h(type, props, children) {
   throw new Error('mdast hyperscript not supported for type ' + type);
 }
 
-function splitTextNode(textNode, inputRegex) {
+function splitTextNode(textNode, inputRegex, createUrl) {
   const oldText = textNode.value;
   const regex = notInMarkdownLink(removeExtremes(inputRegex), 'g');
   const newNodes = [];
@@ -48,7 +48,9 @@ function splitTextNode(textNode, inputRegex) {
       );
     }
     const feedId = output[0];
-    newNodes.push(h('link', {url: feedId}, [h('text', {value: feedId})]));
+    newNodes.push(h('link', { url: createUrl(feedId) }, [
+      h('text', { value: feedId })
+    ]));
     startTextIdx = regex.lastIndex;
   }
   const remainingText = oldText.slice(startTextIdx);
@@ -58,7 +60,9 @@ function splitTextNode(textNode, inputRegex) {
   return newNodes;
 }
 
-function linkifyRegex(regex) {
+function linkifyRegex(regex, creatUrl) {
+  createUrl = creatUrl || (id => id)
+
   return () => ast => {
     visitWithParents(ast, 'text', (textNode, parents) => {
       if (parents.length > 0 && parents[parents.length - 1].type === 'link') {
@@ -75,7 +79,7 @@ function linkifyRegex(regex) {
         delete node._ignoreMe;
         return [node];
       }
-      return splitTextNode(node, regex);
+      return splitTextNode(node, regex, createUrl);
     });
 
     return ast;
