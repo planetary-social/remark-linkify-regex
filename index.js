@@ -60,9 +60,7 @@ function splitTextNode(textNode, inputRegex, createUrl) {
   return newNodes;
 }
 
-function linkifyRegex(regex, creatUrl) {
-  createUrl = creatUrl || (id => id)
-
+function linkifyRegex(regex, createUrl = (id) => id) {
   return () => ast => {
     visitWithParents(ast, 'text', (textNode, parents) => {
       if (parents.length > 0 && parents[parents.length - 1].type === 'link') {
