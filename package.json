@@ -27,6 +27,7 @@
   "devDependencies": {
     "remark": "~9.0.0",
     "remark-parse": "^5.0.0",
+    "ssb-ref": "^2.16.0",
     "tap-arc": "^0.3.5",
     "tape": "^4.14.0",
     "unified": "7.0.0",
